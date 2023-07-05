@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div>
+        <span id="offset-x">0</span>
+        <input type="range" name="" value=0 step="1" min="0" max="100" id="x-no">
+    </div>
+    <div>
+        <span id="offset-y">0</span>
+        <input type="range" name="" value=0 step="1" min="0" max="100" id="y-no">
+    </div>
+    <div>
+        <span id="blur-radius">0</span>
+        <input type="range" name="" value=30 step="1" min="0" max="100" id="blur-no">
+    </div>
+    <div>
+        <span id="spread-radius">0</span>
+        <input type="range" name="" value=0  step="1" min="0" max="100" id="spread-no">
+    </div>
+
+    <div>
+        <span>box color</span>
+        <input type="color" value="#000000" id="boxcolor">
+    </div>
+    <div>
+        <span> color</span>
+        <input type="color" value="#000000" id="color">
+    </div>
+
+
+    <div id="setCSS" class="box">
+
+    </div>
+
+        <button id="k" onclick="GenerateCode()">
+            GenerateCode
+        </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
