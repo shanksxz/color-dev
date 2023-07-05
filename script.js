@@ -76,21 +76,6 @@ numbers.forEach(element => {
     element.addEventListener("input", UpdateShadows);
 })
 
-// function GenerateCode() {
-// console.log(count);
-// codeToCopy.addEventListener("click", copyContent());
-
-// async function copyContent() {
-//     try {
-//         await navigator.clipboard.writeText(count);
-//         // copyMsg.innerText = "copied";
-//         console.log("copied");
-//     }
-//     catch (e) {
-//         // copyMsg.innerText = "Failed";
-//         console.log("failed");
-//     }
-// }
 
 codeToCopy.addEventListener('click', async event => {
     if (!navigator.clipboard) {
