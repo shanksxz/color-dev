@@ -6,52 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div>
-        <span id="offset-x">0px</span>
-        <input type="range" name="" value=0 step="1" min="-200" max="200" id="x-no">
-        <input type="number" id="x-displayno">
+    <div class="container">
+
+        <div class="infoDisplay">
+
+            <div class="innerBox">
+                <h1>BOX SHADOW GENERATOR</h1>
+                <div class="inbox">
+                    <div class="frR">
+                        <span id="offset-x">0px</span>
+                        <input type="number" min="-200" max="200" id="x-displayno">
+                    </div>
+                    <input type="range" name="" value=0 step="1" min="-200" max="200" id="x-no">
+                </div>
+
+                <div class="inbox">
+                    <div class="frR">
+                        <span id="offset-y">0px</span>
+                        <input type="number" min="-200" max="200" id="y-displayno">
+                    </div>
+                    <input type="range" name="" value=0 step="1" min="-200" max="200" id="y-no">
+                </div>
+
+                <div class="inbox">
+                    <div class="frR">
+                        <span id="blur-radius">50px</span>
+                        <input type="number" min="0" max="200" id="br-displayno">
+                    </div>
+                    <input type="range" name="" value=50 step="1" min="0" max="200" id="blur-no">
+                </div>
+
+                <div class="inbox">
+                    <div class="frR">
+                        <span id="spread-radius">0px</span>
+                        <input type="number" min="0" max="200" id="sr-displayno">
+                    </div>
+                    <input type="range" name="" value=0 step="1" min="0" max="200" id="spread-no">  
+                </div>
+
+                <div class="inclr">
+                    <span>Box color</span>
+                    <input type="color" value="#9DB2BF" id="boxcolor">
+                </div>
+                <div class="inclr">
+                    <span>Color</span>
+                    <input type="color" value="#DDE6ED" id="color">
+                </div>
+                <div class="inclr">
+                    <span>Background Color</span>
+                    <input type="color" value="#001C30" id="bgcolor">
+                </div>
+            </div>
+        </div>
+
+        <div class="boxDisplay" id="bg">
+            <div id="setCSS" class="box">
+                <button id="generate">
+                    GenerateCode
+                </button>
+            </div>
+        </div>
     </div>
-    <div>
-        <span id="offset-y">0px</span>
-        <input type="range" name="" value=0 step="1" min="-200" max="200" id="y-no">
-        <input type="number" id="y-displayno">
 
-    </div>
-    <div>
-        <span id="blur-radius">0px</span>
-        <input type="range" name="" value=0 step="1" min="0" max="200" id="blur-no">
-        <input type="number" id="br-displayno">
-
-    </div>
-    <div>
-        <span id="spread-radius">0px</span>
-        <input type="range" name="" value=0  step="1" min="0" max="200" id="spread-no">
-        <input type="number" id="sr-displayno">
-
-    </div>
-
-    <div>
-        <span>box color</span>
-        <input type="color" value="#000000" id="boxcolor">
-
-    </div>
-    <div>
-        <span> color</span>
-        <input type="color" value="#000000" id="color">
-    </div>
-
-
-    <div id="setCSS" class="box">
-
-    </div>
-
-        <button id="k" onclick="GenerateCode()">
-            GenerateCode
-        </button>
 
     <script src="script.js"></script>
 </body>
