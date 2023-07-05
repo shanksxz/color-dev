@@ -1,4 +1,6 @@
 const get = (props) => document.getElementById(`${props}`);
+
+const offsetxDisplay = get("offset-x");
 const offsetyDisplay = get("offset-y");
 const blurRadiusDisplay = get("blur-radius");
 const spreadRadiusDisplay = get("spread-radius");
@@ -6,27 +8,68 @@ const offsetxNo = get('x-no');
 const offsetyNo = get('y-no');
 const blurNo = get('blur-no');
 const spreadNo = get('spread-no');
-const boxx = get('setCSS');
+const box = get('setCSS');
 const boxcolor = get('boxcolor')
 const color = get('color');
 const button = get('k');
-let count;
-
+const x_displayNo = get('x-displayno');
+const y_displayNo = get('y-displayno');
+const br_displayNo = get('br-displayno');
+const sr_displayNo = get('sr-displayno');
 
 
 function UpdateShadows() {
     const code = `${offsetxNo.value}px ${offsetyNo.value}px ${blurNo.value}px ${spreadNo.value}px ${color.value}`;
     count = `box-shadow : ${code}`;
-    boxx.style.boxShadow = code;
+    box.style.boxShadow = code;
+    box.style.backgroundColor = boxcolor.value;
 }
-const abc = [offsetxNo,offsetyNo,blurNo,spreadNo,color];
-abc.forEach(element => {
-    element.onchange = UpdateShadows;
+
+const display = [
+    [offsetxNo,offsetxDisplay],
+    [offsetyNo,offsetyDisplay],
+    [blurNo,blurRadiusDisplay],
+    [spreadNo,spreadRadiusDisplay],
+]
+
+
+const input = [
+    [x_displayNo,offsetxNo,offsetxDisplay],
+    [y_displayNo,offsetyNo,offsetyDisplay],
+    [br_displayNo,blurNo,blurRadiusDisplay],
+    [sr_displayNo,spreadNo,spreadRadiusDisplay],
+]
+
+input.forEach(e => {
+    e[0].addEventListener("input",(event)=>{
+        if(event.target.value != ""){
+            e[1].value = event.target.value;
+            e[2].textContent = `${event.target.value}px`
+        }
+        else {
+            e[2].textContent = '0px';
+        }
+        UpdateShadows();
+    })
+})
+
+
+
+display.forEach(e => {
+    e[0].addEventListener("input", (event)=>{
+        e[1].textContent = `${event.target.value}px`;
+    })
+})
+
+const numbers = [offsetxNo,offsetyNo,blurNo,spreadNo,color,boxcolor];
+numbers.forEach(element => {
+    element.addEventListener("input",  UpdateShadows);
 })
 
 function GenerateCode() {
     console.log(count);
 }
+
 
 
 
